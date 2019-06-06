@@ -1,0 +1,3 @@
+cn\com\ava\hello\spring\cloud\web\admin\feign\service\AdminService.class
+cn\com\ava\hello\spring\cloud\web\admin\feign\WebAdminFeignApplication.class
+cn\com\ava\hello\spring\cloud\web\admin\feign\controller\AdminController.class

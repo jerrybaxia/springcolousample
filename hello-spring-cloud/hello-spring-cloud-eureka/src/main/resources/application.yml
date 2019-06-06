@@ -1,0 +1,14 @@
+#bootstrap优先于application,后面的会默认覆盖前面的
+server:
+  port: 8761
+
+eureka:
+  instance:
+#    服务器域名
+    hostname: localhost
+  client:
+#    代表为当前为服务端模式，不向其他注册
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

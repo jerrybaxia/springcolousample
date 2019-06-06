@@ -1,0 +1,26 @@
+spring:
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+
+server:
+  port: 10300
+
+#开启feign的熔断功能
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  instance:
+#    服务器域名
+    hostname: localhost
+  client:
+#    当前是服务提供方，需要注册到Eureka
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/

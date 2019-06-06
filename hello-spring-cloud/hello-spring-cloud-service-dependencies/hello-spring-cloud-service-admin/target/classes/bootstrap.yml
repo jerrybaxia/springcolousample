@@ -1,0 +1,4 @@
+spring:
+  application:
+    #    声明项目名称
+    name: hello-spring-cloud-service-admin

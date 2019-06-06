@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    config:
+      label: master  #哪个分支
+      service:
+        git:
+          uri: https://github.com/zhangyongcun/spring-cloud-config
+          search-paths: respo
+          username: zhangyongcun
+          password: 123456
+
+server:
+  port: 8888    #这里特殊 SpringCloud默认的端口，在application里面不能修改，如果想要修改的话得写在bootstrap里面
+#TODO 客户端把所有东西都放入jar和用config配置，那如何配置连接到eureka的安全验证呢？
+eureka:
+  instance:
+#    服务器域名
+    hostname: localhost
+  client:
+#    当前是服务提供方，需要注册到Eureka
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/

@@ -1,0 +1,25 @@
+server:
+  port: 10400
+
+eureka:
+  instance:
+#    服务器域名
+    hostname: localhost
+  client:
+#    当前是服务提供方，需要注册到Eureka
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+zuul:
+  host:
+    #设置超时,不然很容易500错误
+    connect-timeout-millis: 12000
+    socket-timeout-millis: 12000
+  routes:
+    api-a:
+      path: /api/a/**
+      serviceId: hello-spring-cloud-web-admin-ribbon
+    api-b:
+      path: /api/b/**
+      serviceId: hello-spring-cloud-web-admin-feign
