@@ -55,12 +55,12 @@
             </plugin>
         </plugins>
     </build>
-
+    <!-- 配置仓库依赖 -->
     <repositories>
         <repository>
-            <id>ava-nexus</id>
-            <name>ava-nexus</name>
-            <url>http://192.168.13.38:8081/nexus/content/groups/public/</url>
+            <id>nexus</id>
+            <name>nexus</name>
+            <url>http://localhost:40080/repository/maven-public/</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -73,12 +73,12 @@
             </snapshots>
         </repository>
     </repositories>
-
+    <!-- 配置插件依赖 -->
     <pluginRepositories>
         <pluginRepository>
-            <id>ava-nexus</id>
-            <name>ava-nexus</name>
-            <url>http://192.168.13.38:8081/nexus/content/groups/public/</url>
+            <id>nexus</id>
+            <name>nexus</name>
+            <url>http://localhost:40080/repository/maven-public/</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
@@ -92,8 +92,8 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
-
-    <distributionManagement>
+    <!--配置版本发布-->
+    <!-- <distributionManagement>
         <repository>
             <id>ava-nexus</id>
             <url>http://192.168.13.38:8081/nexus/content/repositories/releases/</url>
@@ -101,6 +101,16 @@
         <snapshotRepository>
             <id>ava-nexus</id>
             <url>http://192.168.13.38:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement> -->
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://localhost:40080/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://localhost:40080/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>

@@ -1,4 +1,0 @@
-cn\com\ava\hello\spring\cloud\web\admin\ribbon\controller\AdminController.class
-cn\com\ava\hello\spring\cloud\web\admin\ribbon\service\AdminService.class
-cn\com\ava\hello\spring\cloud\web\admin\ribbon\config\RestTemplateConfiguration.class
-cn\com\ava\hello\spring\cloud\web\admin\ribbon\WebAdminRibbonApplication.class
